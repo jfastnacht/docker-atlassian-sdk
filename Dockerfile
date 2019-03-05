@@ -1,6 +1,6 @@
-FROM codeclou/docker-oracle-jdk:8u152
+FROM maven:3.6.0-jdk-8-alpine
 
-ENV ATLS_VERSIN 6.3.15
+ENV ATLS_VERSIN 8.0.7
 
 #
 # BASE PACKAGES + DOWNLOAD GLIBC & ORACLE JAVA & ATLASSIAN SDK
