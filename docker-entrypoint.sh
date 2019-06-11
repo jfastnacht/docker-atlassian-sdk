@@ -2,7 +2,7 @@
 
 set -e
 
-umask u+rxw,g+rwx,o-rwx
+umask 0022 #u+rxw,g+rwx,o-rwx
 
 if [ "$MAVEN_REPOSITORY_MIRROR" != "false" ]
 then

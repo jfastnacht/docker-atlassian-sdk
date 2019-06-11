@@ -9,8 +9,8 @@ RUN apk add --no-cache \
             bash \
             ca-certificates \
             http-parser \
-            libcrypto1.0 \
-            libssl1.0 \
+            #libcrypto1.0 \
+            #libssl1.0 \
             libstdc++ \
             libuv \
             musl \
