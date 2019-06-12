@@ -29,14 +29,14 @@ RUN apk add --no-cache \
 #
 COPY docker-entrypoint.sh /opt/docker-entrypoint.sh
 RUN chmod u+rx,g+rx,o+rx,a-w /opt/docker-entrypoint.sh && \
-    addgroup -g 10777 worker && \
-    adduser -D -G worker -u 10777 worker && \
-    chown -R worker:worker /opt/atlas/ && \
-    chmod -R u+rwx,g+rwx,o-rwx /opt/atlas/ && \
-    chown -R worker:worker /opt/atlas-work/ && \
-    chmod -R u+rwx,g+rwx,o-rwx /opt/atlas-work/ && \
+#    addgroup -g 10777 worker && \
+#    adduser -D -G worker -u 10777 worker && \
+#    chown -R worker:worker /opt/atlas/ && \
+#    chmod -R u+rwx,g+rwx,o-rwx /opt/atlas/ && \
+#    chown -R worker:worker /opt/atlas-work/ && \
+#    chmod -R u+rwx,g+rwx,o-rwx /opt/atlas-work/ && \
     tar -C /opt -xf /opt/atlassian-plugin-sdk-${ATLS_VERSIN}.tar.gz && \
-    chown -R worker:root /opt/atlassian-plugin-sdk-${ATLS_VERSIN} && \
+#    chown -R worker:root /opt/atlassian-plugin-sdk-${ATLS_VERSIN} && \
     rm -f /opt/atlassian-plugin-sdk-${ATLS_VERSIN}.tar.gz && \
     apk del curl gzip tar && \
     rm -rf /tmp/* /var/cache/apk/*
@@ -45,7 +45,7 @@ RUN chmod u+rx,g+rx,o+rx,a-w /opt/docker-entrypoint.sh && \
 # RUN
 #
 EXPOSE 2990
-USER worker
+#USER worker
 ENV MAVEN_REPOSITORY_MIRROR "false"
 ENV JAVA_HOME /opt/jdk
 ENV PATH ${PATH}:/opt/atlassian-plugin-sdk-${ATLS_VERSIN}/bin/:/opt/jdk/bin/
